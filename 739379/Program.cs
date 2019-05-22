@@ -13,11 +13,7 @@ namespace _739379
         {
             Manager m1 = new Manager();
             m1.Run();
-            TaskTwo tt = new TaskTwo();
-            tt.MutiTable();
-            tt.Sum();
-            tt.Swap();
-            tt.Multiply();
+            
 
             while (true)
             {
@@ -119,26 +115,33 @@ namespace _739379
     {
         public void Run()
         {
+            Dog fido = new Dog();
+            Cat fifi = new Cat();
+
+            TaskTwo tt = new TaskTwo();
+            tt.MutiTable();
+            tt.Sum();
+            tt.Swap();
+            tt.Multiply();
 
         }
     }
     class Dog
     {
-        static int dogVar1=0;
+        static int dogObjects = 0;
         string dogName;
+        public int strength;
         Random rand = new Random();
+        public Dog()
+        {
+            Dog.dogObjects++;
+            this.strength = SetStrength();
+        }
 
         public int SetStrength()
         {
-            int strength = 0;
-
-            //for (; ; )
-            //{
-
-            //}
 
             return rand.Next(1,100);
-            
         }
         
 
@@ -146,7 +149,7 @@ namespace _739379
 
     class Cat
     {
-        static int catVar1=0;
+        static int carobjects=0;
         string catName;
         public void catMethod()
         {
